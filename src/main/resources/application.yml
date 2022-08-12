@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: REST API
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cocomecha_db
+    username: root
+    password: root
+server:
+  port: 8080
