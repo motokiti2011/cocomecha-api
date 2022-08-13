@@ -1,16 +1,22 @@
 package com.example.cocomecha_api.domain.model;
+  
 
-import lombok.Builder;
-import lombok.Data;
+import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.Builder;
 
 @Data
 @Builder
-public class User {
-    @Id
-    private Integer userid;
-    private String username;
-    private Integer price;
+public class User implements Serializable{
+	
+	@Id
+	private String mailaddress;
+	private String encodedPassword;
+	private String name;
+	private List<Role> roles;
+	
 }

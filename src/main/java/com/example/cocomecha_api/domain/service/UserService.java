@@ -1,5 +1,6 @@
 package com.example.cocomecha_api.domain.service;
 
+
 import com.example.cocomecha_api.domain.model.User;
 import com.example.cocomecha_api.domain.repository.UserRepository;
 import lombok.NonNull;
@@ -12,11 +13,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserService {
 
-    @NonNull
-    private final UserRepository UserRepository;
+  @NonNull
+  private final UserRepository userRepository;
 
-    public List<User> findByUserid(Integer userid) {
-        return this.UserRepository.findByUserid(userid);
-    }
+  public List<User> findById(String mailaddress) {
+      return this.userRepository.findById(mailaddress);
+  }
+
 
 }
