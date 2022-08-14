@@ -147,6 +147,7 @@ CREATE TABLE IF NOT EXISTS slip_detail (
     completion_date VARCHAR(255),
     image_url  VARCHAR(255),
     delete_div VARCHAR(255),
+    messageOpenLebel VARCHAR(255),
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated TIMESTAMP
 );
@@ -237,4 +238,33 @@ CREATE TABLE IF NOT EXISTS user_browsing_history (
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated TIMESTAMP
 );
+
+
+-- 伝票情報　伝票情報
+CREATE TABLE IF NOT EXISTS user_mylist (
+    id VARCHAR(255) NOT NULL PRIMARY KEY,
+    slip_no VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL ,
+    title VARCHAR(255) NOT NULL,
+    category VARCHAR(255),
+    area VARCHAR(255),
+    price VARCHAR(255) ,
+    bid_method VARCHAR(255),
+    bidder_id VARCHAR(255),
+    bid_End_date VARCHAR(255),
+    explanation VARCHAR(255),
+    preferred_date VARCHAR(255),
+    preferred_time VARCHAR(255),
+    completion_date VARCHAR(255),
+    image_url  VARCHAR(255),
+    delete_div VARCHAR(255),
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated TIMESTAMP
+);
+
+INSERT INTO user_mylist
+(id, slip_no, user_id, title, category, area, price, bid_method, bidder_id, bid_end_date, explanation,  preferred_date, preferred_time, completion_date, delete_div, image_url) 
+VALUES 
+('1', '1', '1', 'テスト１', '1', '1', '20000', '1' , '1' , '20221001', '説明１', '20220131', '13', '20221031', '0', '' )
+    ON DUPLICATE KEY UPDATE id = VALUES (id);
 

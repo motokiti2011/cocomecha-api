@@ -50,6 +50,8 @@ public class SlipDetailEntity {
   private String deleteDiv;
   @Column(name = "image_url")
   private String imageUrl;
+  @Column(name = "message_open_lebel")
+  private String messageOpenLebel;
 
 
   /**
@@ -75,6 +77,7 @@ public class SlipDetailEntity {
               .completionDate(this.completionDate)
               .deleteDiv(this.deleteDiv)
               .imageUrl(this.imageUrl)
+              .messageOpenLebel(this.messageOpenLebel)
               .build();
   }
 
@@ -103,6 +106,7 @@ public class SlipDetailEntity {
               .completionDate(slipDetail.getCompletionDate())
               .deleteDiv(slipDetail.getDeleteDiv())
               .imageUrl(slipDetail.getImageUrl())
+              .messageOpenLebel(slipDetail.getMessageOpenLebel())
               .build();
   }
 }
